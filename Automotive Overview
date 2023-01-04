@@ -1,0 +1,25 @@
+1. Phát triển Device Driver, Kernel, HAL, BSP ==> Đại khái là làm phần mềm ở mức sâu, gần với OS và HW
+- Viết code tương tác trực tiếp với phần cứng
+- Chủ yếu dùng ngôn ngữ C
+- Cần có kiến thức về vi điều khiển (MCU) và các thiết bị ngoại vi
+- Cần có knowledge về các giao thức truyền thông như UART, SPI, I2C, Ethernet, CAN, LIN, FlexRay, USB
+
+2. Phát triển Service (middleware) ==> Tầng ở giữa Application và OS/HW
+Service không tương tác trực tiếp với User mà tương tác với tầng dưới (device driver, OS), các service khác và  tầng trên:(các application)
+Để code đc service thì cần am hiểu về 1 protocol hoặc technology nào đó, ví dụ:
+Bluetooth service: Bluetooth stack, bluetooth profile
+Carplay service : Bluetooth, Wifi, iAP
+Usb Media service: USB, Audio/Video container
+Media Streaming service: RTSP (realtime streaming protocol)
+etc 
+3. Phát triển Application
+Application là Layer cao nhất trong kiến trúc của Embedded Software, tương tác trực tiếp với User
+Là layer chứa nhiều business logic nhất, cần có giao diện (HMI) để tương tác với user
+Application cũng là phần dễ thay đổi yêu cầu nhất trong hệ thống
+⇒ Do đó các kỹ năng và kiến thức khác (ngoài ngôn ngữ lập trình) để có thể làm tốt phần Application, đó là:
+Kiến thức về domain: Làm Automotive thì cần có kiến thức về xe, làm IoT thì cần có kiến thức về SmartHome, Smart City, etc
+Có kiến thức về design pattern để làm sào thiết kế App dễ maintain, dễ đáp ứng với thay đổi, dễ mở rộng
+HMI framework : Qt, Kanzi, CGI, Embedded Wizard, etc.
+OS: Linux, QNX, INTEGRITY, FreeRTOS, etc.
+Platform: GENIVI, AGL, Android Automotive
+Cross compile: Yocto
